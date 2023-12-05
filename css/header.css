@@ -7,9 +7,10 @@
     width: 100%;
     transition: background-color 0.3s ease;
     text-transform: uppercase;
-    color: var(--black400);
+    color: var(--white);
     font-weight: 800;
     z-index: 2;
+    mix-blend-mode: difference;
 }
 
 #header .left {
@@ -21,6 +22,8 @@
     text-align: right;
 }
 
+#header .left div.active {}
+
 @media(max-width: 479px) {
     #header .left {
         display: none;
@@ -31,10 +34,26 @@
         display: flex;
         justify-content: space-between;
     }
+
     #header .right a {
         border: 1px solid var(--black400);
         border-radius: 15px;
         padding: 2px 5px;
     }
 
+}
+
+#header .left div {
+    display: none;
+}
+
+#header .left .visual {
+    display: block;
+    /* Add any styling for the initial state of visual */
+}
+
+/* Active state - show the corresponding menu items when section is in viewport */
+#header .left div.active {
+    display: block;
+    /* Add any styling for the active class */
 }

@@ -19,20 +19,20 @@
 
 .title_t1 {
     font-size: 14vw;
-    font-family: var(--main-gmark);
+    font-family: var(--gmark);
     font-weight: 900;
-    line-height: 12.6vw;
+    line-height: 9.6vw;
     letter-spacing: -.9vw;
 }
 
 .title_t2 {
     font-size: 14vw;
-    font-family: var(--main-gmark);
+    font-family: var(--gmark);
     font-weight: 900;
-    line-height: 7.6vw;
+    line-height: 9.6vw;
     letter-spacing: -.9vw;
     display: inline-block;
-    padding-bottom: 5vw;
+    padding-top: 2.6vw;
 }
 
 .title_t2 p {}

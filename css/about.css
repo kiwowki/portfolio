@@ -73,6 +73,8 @@
     /* 필터 효과 (예: 블러) */
     transform-origin: center;
     border-radius: 50%;
+
+    transition: opacity 0.5s;
 }
 
 .background-copy:nth-child(1) {
