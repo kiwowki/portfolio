@@ -1,0 +1,40 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    color: var(--black400);
+    font-weight: 800;
+    z-index: 2;
+}
+
+#header .left {
+    padding: 20px;
+}
+
+#header .right {
+    padding: 15px;
+    text-align: right;
+}
+
+@media(max-width: 479px) {
+    #header .left {
+        display: none;
+    }
+
+    #header .right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #header .right a {
+        border: 1px solid var(--black400);
+        border-radius: 15px;
+        padding: 2px 5px;
+    }
+
+}

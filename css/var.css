@@ -1,0 +1,41 @@
+:root {
+    --nanum: "NanumSquareNeo";
+    --gmark: "GmarketSans";
+    --ilbo: "Chosunilbo_myungjo";
+    
+
+
+    --mapo: "MapoGoldenPier";
+    --oswald: "Oswald";
+    --roman: "Luxurious Roman";
+    --han: "Hankc";
+    --bok: "BOKEH";
+    --zeno: "Partizeno";
+
+
+    --black: #000000;
+    --white: #ffffff;
+    --red: #f00;
+    --yellow: #FCD730;
+    
+
+    --black100: #2D2D2D;
+    --black200: #4A4A4A;
+    --black300: #757575;
+    --black400: #959595;
+    --black500: #d7d7d7;
+
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+@media (max-width: 800px){
+    :root {
+        font-size: 14px;
+    }
+}
+
+:root {
+
+}

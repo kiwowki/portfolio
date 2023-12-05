@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* 기본 설정 */
+@import "font.css";
+@import "reset.css";
+@import "var.css";
+@import "commons.css";
+
+/* 섹션별 설정 */
+@import "header.css";
+@import "intro.css";
+@import "about.css";
