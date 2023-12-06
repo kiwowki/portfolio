@@ -9,17 +9,33 @@
     text-transform: uppercase;
     color: var(--white);
     font-weight: 800;
-    z-index: 2;
+    z-index: 1000;
     mix-blend-mode: difference;
 }
 
 #header .left {
     padding: 20px;
+    
+}
+
+#header .left > div {
+    transition: all 0.3s;
+}
+#header .left > div a {
+    transition: all 0.3s;
+}
+
+#header .left a:hover {
+    color: var(--yellow);
 }
 
 #header .right {
     padding: 15px;
     text-align: right;
+}
+
+#header .right a:hover {
+    color: var(--yellow);
 }
 
 #header .left div.active {}
@@ -43,17 +59,14 @@
 
 }
 
-#header .left div {
+ #header .left div {
     display: none;
 }
 
 #header .left .visual {
     display: block;
-    /* Add any styling for the initial state of visual */
 }
-
-/* Active state - show the corresponding menu items when section is in viewport */
+/*
 #header .left div.active {
     display: block;
-    /* Add any styling for the active class */
-}
+} */

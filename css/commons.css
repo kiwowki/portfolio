@@ -38,3 +38,7 @@
 .mr80 {margin-right: 80px !important;}
 .mr90 {margin-right: 90px !important;}
 .mr100 {margin-right: 100px !important;}
+
+body {
+    scroll-behavior: smooth;
+}
