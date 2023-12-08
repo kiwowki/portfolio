@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <div id="loading-text">로딩 중...</div>
+        <div id="loading-progress"></div>
+    </div>
     <header id="header">
         <div class="left">
             <div class="visual">visual</div>
@@ -242,7 +246,7 @@
             </div>
             <div class="about_photos p1">
                 <div class="about_photos_text">
-                    <p>first challenge</p>
+                    <p>first Challenge</p>
                 </div>
                 <div class="about_photos_img">
                     <div class="photo_wrap">
@@ -268,7 +272,34 @@
                     </div>
                 </div>
             </div>
-            <div class="about_photos p2"></div>
+            <div class="about_photos p2">
+                <div class="about_photos_text">
+                    <p>first Passionate</p>
+                </div>
+                <div class="about_photos_img">
+                    <div class="photo_wrap">
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                    </div>
+                    <div class="photo_wrap">
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                    </div>
+                    <div class="photo_wrap">
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                        <div class="photo"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- //about -->
@@ -292,6 +323,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="script/script.js"></script>
     <script>
+        // 로딩 페이지
+        document.addEventListener("DOMContentLoaded", function () {
+            // Your existing code...
+
+            // Add the following lines to hide the loading screen when everything is loaded
+            const loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.style.display = "none";
+        });
+
+        
+
         // 스크롤 스무스 효과
         const lenis = new Lenis()
 
@@ -306,6 +348,21 @@
 
         requestAnimationFrame(raf)
 
+
+
+
+        // about photos 2 랜덤이미지
+        document.addEventListener("DOMContentLoaded", function () {
+            // 이미지 파일 이름을 배열에 저장합니다.
+            const imageArray = ["../img/about_img2.jpg", "../img/about_img3.jpg", "../img/about_img4.jpg"];
+
+            // 랜덤한 숫자를 생성하여 배열에서 이미지를 선택합니다.
+            const randomIndex = Math.floor(Math.random() * imageArray.length);
+            const randomImage = imageArray[randomIndex];
+
+            // 선택된 이미지를 배경으로 설정합니다.
+            document.querySelector(".p2 .about_photos_img .photo").style.backgroundImage = `url('${randomImage}')`;
+        });
 
 
 
