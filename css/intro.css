@@ -65,16 +65,18 @@
 }
 
 .flipper {
-    width: 6.5vw;
-    height: 9vw;
     transform-style: preserve-3d;
     transition: transform 1s;
+    width: 6vw;
+    height: 8vw;
+    margin: 0.1vw;
+    border-radius: 10px;
 }
 
 .front,
 .back {
     width: 100%;
-    height: 95%;
+    height: 100%;
     position: absolute;
     backface-visibility: hidden;
     cursor: pointer;
@@ -86,9 +88,9 @@
 
 .front img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    border-radius: 1.2vw;
+    border-radius: 1vw;
     
 }
 
@@ -111,7 +113,7 @@
         font-size: 2vw;
     }
 
-    .images_wrap>div:nth-last-child(-n+4) {
+    .images_wrap>div:nth-last-child(-n+5) {
         display: none;
     }
 
@@ -147,7 +149,7 @@
         font-size: 5vw;
     }
 
-    .images_wrap>div:nth-last-child(-n+10) {
+    .images_wrap>div:nth-last-child(-n+11) {
         display: none;
     }
     .flip-container {

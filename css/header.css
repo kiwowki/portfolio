@@ -38,6 +38,7 @@
     font-weight: 800;
     z-index: 1000;
     mix-blend-mode: difference;
+    font-family: 'GmarketSans';
 }
 
 #header .left {
