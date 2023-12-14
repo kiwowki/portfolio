@@ -14,6 +14,11 @@
     margin: 0 auto;
 }
 
+.mbm-diff {
+    mix-blend-mode: difference;
+    color: var(--white);
+}
+
 /* 마진 간격 */
 .mt0 {margin-top: 0px !important;}
 .mt10 {margin-top: 10px !important;}

@@ -8,14 +8,138 @@ $(document).ready(function () {
     updateHeaderVisibility();
 
     // intro 타이틀, 이미지 등장 설정
-    document.querySelectorAll(".split").forEach(desc => {
-        let splitText = desc.innerText;
-        let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-        splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
-        desc.innerHTML = splitWrap;
-        desc.setAttribute("aria-label", splitText);
-    });
+    // document.querySelectorAll(".split").forEach(desc => {
+    //     let splitText = desc.innerText;
+    //     let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+    //     splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+    //     desc.innerHTML = splitWrap;
+    //     desc.setAttribute("aria-label", splitText);
+    // });
 
+
+
+    // // 03. 모든 텍스트 분리하기 : 여백 포현하기
+    // document.querySelectorAll(".split").forEach(text => {
+    //     let theText = text.innerText;
+    //     let newText = "";
+
+    //     for (let i = 0; i < text.innerText.length; i++) {
+    //         newText += "<span aria-hidden='true'>";
+
+    //         if (text.innerText[i] == " ") {
+    //             newText += "&nbsp"; // 반 칸만 띄우기
+    //         } else {
+    //             newText += text.innerText[i];
+    //         }
+
+    //         newText += "</span>";
+    //     }
+    //     text.innerHTML = newText;
+    //     text.setAttribute("aria-label", theText);
+    // })
+
+    // //
+    // gsap.utils.toArray(".split").forEach(text => {
+    //     gsap.from(text.querySelectorAll("span"), {  // span은 인라인 구조. 따로 인라인블록으로 구조 바꾸기
+    //         yPercent: 100,       // 그래서 y퍼센트가 적용이 안 됨
+    //         autoAlpha: 0,
+    //         duration: 0.5,
+    //         ease: "circ.out",
+    //         // stagger: 0.1,     // 노랜덤 부들거리며 나오기
+    //         stagger: {
+    //             amount: 1,
+    //             from: "random"   // 랜덤 효과
+    //         },
+    //         scrollTrigger: {
+    //             trigger: text,
+    //             start: "top bottom",
+    //             end: "+400",
+    //             markers: true
+    //         }
+    //     });
+    // });
+
+    // // intro, 이미지 나타기 효과
+    // gsap.set(".intro_title .title .title_t1, .intro_title .title .title_t2", { overflow: "hidden" });
+    // gsap.set(".intro_title .title .title_t1 p", { opacity: 0, y: 100, z: -1000 });
+    // gsap.set(".intro_title .title .title_t2 p", { opacity: 0, y: -100, z: -1000 });
+    // gsap.set(".images_wrap .flip-container", { opacity: 0, scale: 2.5 });
+    // gsap.set("#header", { y: -500 });
+
+    // let imageElements = document.querySelectorAll(".images_wrap .flip-container");
+    // let shuffledImages = Array.from(imageElements).sort(() => Math.random() - 0.5);
+
+    // setTimeout(() => {
+    //     let tl = gsap.timeline();
+
+    //     tl.to(".intro_title .title .title_t1 p, .intro_title .title .title_t2 p", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, "a");
+    //     tl.to(shuffledImages, { duration: 0.2, opacity: 1, scale: 1, stagger: 0.2 });
+    //     tl.to("#header", { duration: 1.2, y: 0 });
+    // }, 2000);
+
+
+
+
+    // // intro 이미지 뒤집으면 글자 나오게
+    // function flipCard(element) {
+    //     const flipper = element.querySelector('.flipper');
+    //     flipper.style.transform = flipper.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    // }
+
+    // $('.flip-container').click(function () {
+    //     // flipCard 함수 호출
+    //     flipCard(this);
+    // });
+
+
+
+    // 텍스트 분할 애니메이션 함수(기본)
+    function applyTextSplitAnimation(selector, staggerAmount, staggerFrom) {
+        gsap.utils.toArray(selector).forEach(text => {
+            let theText = text.innerText;
+            let newText = "";
+
+            for (let i = 0; i < text.innerText.length; i++) {
+                newText += "<span aria-hidden='true'>";
+
+                if (theText[i] === " ") {
+                    newText += "&nbsp;";
+                } else if (theText[i] === "\n") {
+                    newText += "<br>";
+                } else {
+                    newText += theText[i];
+                }
+
+                newText += "</span>";
+            }
+            text.innerHTML = newText;
+            text.setAttribute("aria-label", theText);
+        });
+
+        gsap.utils.toArray(selector).forEach(text => {
+            gsap.from(text.querySelectorAll("span"), {
+                yPercent: 100,
+                autoAlpha: 0,
+                duration: 0.5,
+                opacity: 0,
+                ease: "circ.out",
+                stagger: {
+                    amount: staggerAmount,
+                    from: staggerFrom
+                },
+                scrollTrigger: {
+                    trigger: text,
+                    start: "top bottom",
+                    end: "+400",
+                    markers: true
+                }
+            });
+        });
+
+
+    }
+
+    // 초기 설정 및 이미지 나타기 효과
     gsap.set(".intro_title .title .title_t1, .intro_title .title .title_t2", { overflow: "hidden" });
     gsap.set(".intro_title .title .title_t1 p", { opacity: 0, y: 100, z: -1000 });
     gsap.set(".intro_title .title .title_t2 p", { opacity: 0, y: -100, z: -1000 });
@@ -33,22 +157,99 @@ $(document).ready(function () {
         tl.to("#header", { duration: 1.2, y: 0 });
     }, 2000);
 
-    // intro 이미지 뒤집으면 글자 나오게
+    // 이미지 뒤집으면 글자 나오게
     function flipCard(element) {
         const flipper = element.querySelector('.flipper');
         flipper.style.transform = flipper.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
     }
 
     $('.flip-container').click(function () {
-        // flipCard 함수 호출
         flipCard(this);
     });
 
+    // .split 클래스를 가진 모든 요소에 대한 텍스트 분할 애니메이션
+    applyTextSplitAnimation(".split", 1, "start");
+    applyTextSplitAnimation(".split2", 0.5, "random");
+    applyTextSplitAnimation(".split3", 0.8, "start");
+
+    // // 추가 텍스트에 대한 페이드인 효과
+    // gsap.to(".text.t7 p", {
+    //     opacity: 1,
+    //     duration: 0.5,
+    //     stagger: 0.5,
+    //     scrollTrigger: {
+    //         trigger: ".text.t7",
+    //         start: "top bottom",
+    //         end: "+400",
+    //         markers: true
+    //     }
+    // });
 
 
+    // about_text_top
+    // about_text_top 글자 애니메이션
+    const targetsT1 = gsap.utils.toArray(".about_text_top .t1.split");
+    const targetsT2 = gsap.utils.toArray(".about_text_top .t2.split");
+    const targetsT3 = gsap.utils.toArray(".about_text_top .t3.split");
 
+    targetsT1.forEach(target => {
+        let splitClient = new SplitType(target, { type: "lines, words, chars" });
+        let chars = splitClient.chars;
+
+        gsap.from(chars, {
+            yPercent: 50,
+            opacity: 0,
+            rotation: 10,
+            duration: 0.7,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: target,
+                start: "top bottom",
+                end: "+400",
+                markers: true
+            }
+        });
+    });
+    targetsT2.forEach(target => {
+        let splitClient = new SplitType(target, { type: "lines, words, chars" });
+        let chars = splitClient.chars;
+
+        gsap.from(chars, {
+            yPercent: 50,
+            opacity: 0,
+            rotation: 10,
+            duration: 0.7,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: target,
+                start: "top bottom",
+                end: "+400",
+                markers: true
+            }
+        });
+    });
+    targetsT3.forEach(target => {
+        let splitClient = new SplitType(target, { type: "lines, words, chars" });
+        let chars = splitClient.chars;
+
+        gsap.from(chars, {
+            yPercent: 50,
+            opacity: 0,
+            rotation: 10,
+            duration: 0.7,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: target,
+                start: "top bottom",
+                end: "+400",
+                markers: true
+            }
+        });
+    });
 
 });
+
+
 
 
 // header
@@ -102,7 +303,6 @@ ScrollTrigger.create({
 const container = document.querySelector('.background-container');
 const copies = document.querySelectorAll('.background-copy');
 
-// Number of copies
 const numCopies = copies.length;
 
 window.addEventListener('scroll', function () {
@@ -125,66 +325,7 @@ window.addEventListener('scroll', function () {
 });
 
 
-// about_text_top
-// about_text_top 글자 애니메이션
-const targetsT1 = gsap.utils.toArray(".about_text_top .t1.split");
-const targetsT2 = gsap.utils.toArray(".about_text_top .t2.split");
-const targetsT3 = gsap.utils.toArray(".about_text_top .t3.split");
 
-targetsT1.forEach(target => {
-    let splitClient = new SplitType(target, { type: "lines, words, chars" });
-    let chars = splitClient.chars;
-
-    gsap.from(chars, {
-        yPercent: 50,
-        opacity: 0,
-        rotation: 10,
-        duration: 0.7,
-        stagger: 0.1,
-        scrollTrigger: {
-            trigger: target,
-            start: "top bottom",
-            end: "+400",
-            markers: true
-        }
-    });
-});
-targetsT2.forEach(target => {
-    let splitClient = new SplitType(target, { type: "lines, words, chars" });
-    let chars = splitClient.chars;
-
-    gsap.from(chars, {
-        yPercent: 50,
-        opacity: 0,
-        rotation: 10,
-        duration: 0.7,
-        stagger: 0.2,
-        scrollTrigger: {
-            trigger: target,
-            start: "top bottom",
-            end: "+400",
-            markers: true
-        }
-    });
-});
-targetsT3.forEach(target => {
-    let splitClient = new SplitType(target, { type: "lines, words, chars" });
-    let chars = splitClient.chars;
-
-    gsap.from(chars, {
-        yPercent: 50,
-        opacity: 0,
-        rotation: 10,
-        duration: 0.7,
-        stagger: 0.3,
-        scrollTrigger: {
-            trigger: target,
-            start: "top bottom",
-            end: "+400",
-            markers: true
-        }
-    });
-});
 
 // about photos 2 랜덤이미지
 // 이미지 파일 이름을 배열에 저장합니다.
