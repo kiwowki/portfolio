@@ -1,26 +1,3 @@
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px;
-}
-
-#loading-text {
-    margin-right: 10px;
-}
-
-#loading-progress {
-    width: 100px; /* 원하는 프로그레스 바 너비 설정 */
-    height: 10px;
-    background: white;
-}
 
 
 
@@ -38,7 +15,9 @@
     font-weight: 800;
     z-index: 1000;
     mix-blend-mode: difference;
-    font-family: 'GmarketSans';
+    font-family: var(--pre);
+    font-size: 0.7vw;
+    
 }
 
 #header .left {
@@ -68,7 +47,28 @@
 
 #header .left div.active {}
 
+@media(max-width: 1400px) {
+    #header {
+        font-size: 1vw;
+    }
+
+}
+@media(max-width: 1000px) {
+    #header {
+        font-size: 1.4vw;
+    }
+
+}
+@media(max-width: 700px) {
+    #header {
+        font-size: 1.6vw;
+    }
+
+}
 @media(max-width: 479px) {
+    #header {
+        font-size: 3vw;
+    }
     #header .left {
         display: none;
     }

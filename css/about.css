@@ -300,18 +300,19 @@
     left: 0; */
     opacity: 1;
     transition: opacity 0.5s ease;
+    border-radius: 0 0 100px 100px;
 }
 
 .about_photos.p1 {
     background-color: #FFF5F5;
-    z-index: 2;
+    /* z-index: 2; */
     position: relative;
 }
 
 .about_photos.p2 {
     background-color: #FEFFF5;
     opacity: 1;
-    z-index: 1;
+    /* z-index: 1; */
     position: relative;
 }
 

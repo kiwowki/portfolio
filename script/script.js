@@ -168,9 +168,9 @@ $(document).ready(function () {
     });
 
     // .split 클래스를 가진 모든 요소에 대한 텍스트 분할 애니메이션
-    applyTextSplitAnimation(".split", 1, "start");
-    applyTextSplitAnimation(".split2", 0.5, "random");
-    applyTextSplitAnimation(".split3", 0.8, "start");
+    applyTextSplitAnimation(".split", 0.7, "start");
+    applyTextSplitAnimation(".split2", 0.3, "random");
+    applyTextSplitAnimation(".split3", 0.5, "start");
 
     // // 추가 텍스트에 대한 페이드인 효과
     // gsap.to(".text.t7 p", {
@@ -200,7 +200,7 @@ $(document).ready(function () {
             yPercent: 50,
             opacity: 0,
             rotation: 10,
-            duration: 0.7,
+            duration: 0.3,
             stagger: 0.1,
             scrollTrigger: {
                 trigger: target,
@@ -218,8 +218,8 @@ $(document).ready(function () {
             yPercent: 50,
             opacity: 0,
             rotation: 10,
-            duration: 0.7,
-            stagger: 0.2,
+            duration: 0.1,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: target,
                 start: "top bottom",
@@ -236,8 +236,8 @@ $(document).ready(function () {
             yPercent: 50,
             opacity: 0,
             rotation: 10,
-            duration: 0.7,
-            stagger: 0.3,
+            duration: 0.5,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: target,
                 start: "top bottom",
