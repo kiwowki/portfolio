@@ -1,0 +1,180 @@
+.skills_and_playground {
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 4vw;
+    display: block;
+    position: relative;
+    overflow: visible;
+}
+
+#skills {
+
+}
+
+.skills_wrap {
+    width: 100%;
+    font-family: var(--sui);
+    font-weight: 500;
+    padding: 2.4vw 1.2vw;
+}
+
+.personality_wrap {}
+
+.personality_top {
+    padding-left: 1.2vw;
+    padding-bottom: 1vw;
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 1vw;
+}
+
+.personality_main {
+
+    font-size: 15vw;
+}
+
+.personality_main>div {
+    display: flex;
+    line-height: 0.8;
+    font-weight: 500;
+    letter-spacing: -.5vw;
+}
+
+.personality_main>div>span {
+    font-size: 1vw;
+    letter-spacing: -.1vw;
+    color: var(--black);
+    font-family: var(--pre);
+    padding-top: 1vw;
+}
+
+.personality_main .t1 {
+    color: #000;
+}
+
+.personality_main .t2 {
+    color: #2D2D2D;
+}
+
+.personality_main .t3 {
+    color: #4A4A4A;
+}
+
+.personality_main .t4 {
+    color: #757575;
+}
+
+.personality_main .t5 {
+    color: #959595;
+}
+
+.skillSet_wrap {}
+
+.skillSet_top {
+    padding-top: 16vw;
+    padding-bottom: 2vw;
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 1vw;
+}
+
+.skillSet_main {
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+}
+
+.skillSet_main .left {
+    width: 25%;
+    flex-direction: column;
+    display: flex;
+    position: static;
+}
+
+.skillSet_main .mid {
+    width: 50%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+
+.skillSet_main .right {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: static;
+}
+
+.h3 {
+    color: #000;
+    letter-spacing: -.3vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--sui);
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 4vw;
+}
+
+.h4 {
+    color: #000;
+    letter-spacing: -.2vw;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: var(--ilbo);
+    font-size: 5vw;
+    font-weight: 300;
+    line-height: 4vw;
+    text-decoration: none;
+}
+
+.h3.bold {
+    font-weight: 500;
+}
+
+@media (max-width: 1000px) {
+    .personality_main>div>span {
+        font-size: 2vw;
+    }
+    .skillSet_wrap {
+        text-align: right;
+    }
+
+    .skillSet_top {
+        font-size: 2vw;
+        line-height: 2vw;
+    }
+
+    .skillSet_main {
+        display: flex;
+        justify-content: flex-end
+    }
+
+    .skillSet_main .left {
+        display: none;
+    }
+    .skillSet_main .mid {
+        align-items: flex-end;
+    }
+    .skillSet_main .mid > div {
+        
+        letter-spacing: -.4vw;
+        font-size: 8vw;
+        line-height: 6.5vw;
+    }
+
+    .skillSet_main .right {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    /* #skills {
+        margin-top: -200px;
+    } */
+}
+
+@media (max-width: 479px) {}

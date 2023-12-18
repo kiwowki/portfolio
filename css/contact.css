@@ -1,0 +1,131 @@
+#contact {
+    margin-top: -4vw;
+}
+
+.contact_wrap {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 5vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--sui);
+    padding: 5.2vw 1.2vw 1.2vw;
+}
+
+.contact_wrap .top {}
+
+.contact_wrap .top h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12vw;
+    font-weight: 500;
+    letter-spacing: -.9vw;
+    line-height: 9.1vw;
+}
+
+.contact_wrap .top h2 p {}
+
+.contact_wrap .mid {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact_wrap .mid .img_wrap {
+    width: 50%;
+}
+
+.contact_wrap .mid .img_wrap img {
+    border-radius: 3vw;
+}
+
+.contact_wrap .mid h2 {
+    font-size: 11vw;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: -.9vw;
+    line-height: 9.1vw;
+}
+
+.contact_wrap .bot {
+    text-align: center;
+}
+
+.contact_wrap .bot .top_button {
+    margin-top: 300px;
+    margin-bottom: 170px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    display: inline-block;
+}
+
+.contact_wrap .bot .top_button:hover {
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.contact_wrap .bot .text {
+    font-family: var(--pre);
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 1vw;
+}
+
+.contact_wrap .bot .mail {
+    font-family: var(--zeno);
+    font-size: 5vw;
+    font-weight: 300;
+    letter-spacing: -.2vw;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 4.5vw;
+    border-bottom: 1px solid #fff;
+}
+
+.contact_wrap .bot .mail:hover {
+    /* border-bottom: 1px solid var(--yellow); */
+    color: var(--yellow);
+}
+
+.contact_wrap .sns {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    
+    font-family: var(--sui);
+    text-transform: uppercase;
+
+}
+
+.contact_wrap .sns span {
+    display: flex;
+    flex-direction: column;
+    font-size: 1vw;
+}
+
+.contact_wrap .sns span a {
+    font-size: 4vw;
+    font-weight: 600;
+    line-height: 3vw;
+    letter-spacing: -.1vw;
+}
+.contact_wrap .sns span a:hover {
+    color: var(--yellow);
+}
+
+.contact_wrap .sns span:nth-child(1) {
+    text-align: left;
+}
+.contact_wrap .sns span:nth-child(2) {
+    text-align: center;
+}
+.contact_wrap .sns span:nth-child(3) {
+    text-align: right;
+}
