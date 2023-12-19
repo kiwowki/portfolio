@@ -16,6 +16,7 @@
     font-family: var(--sui);
     font-weight: 500;
     padding: 2.4vw 1.2vw;
+    margin-top: -5vw;
 }
 
 .personality_wrap {}
@@ -177,4 +178,8 @@
     } */
 }
 
-@media (max-width: 479px) {}
+@media (max-width: 479px) {
+    .skills_wrap {
+        margin-top: 7vw;
+    }
+}

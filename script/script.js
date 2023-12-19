@@ -7,91 +7,6 @@ $(document).ready(function () {
     // 페이지 로딩 후 초기 적용
     updateHeaderVisibility();
 
-    // intro 타이틀, 이미지 등장 설정
-    // document.querySelectorAll(".split").forEach(desc => {
-    //     let splitText = desc.innerText;
-    //     let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-    //     splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
-    //     desc.innerHTML = splitWrap;
-    //     desc.setAttribute("aria-label", splitText);
-    // });
-
-
-
-    // // 03. 모든 텍스트 분리하기 : 여백 포현하기
-    // document.querySelectorAll(".split").forEach(text => {
-    //     let theText = text.innerText;
-    //     let newText = "";
-
-    //     for (let i = 0; i < text.innerText.length; i++) {
-    //         newText += "<span aria-hidden='true'>";
-
-    //         if (text.innerText[i] == " ") {
-    //             newText += "&nbsp"; // 반 칸만 띄우기
-    //         } else {
-    //             newText += text.innerText[i];
-    //         }
-
-    //         newText += "</span>";
-    //     }
-    //     text.innerHTML = newText;
-    //     text.setAttribute("aria-label", theText);
-    // })
-
-    // //
-    // gsap.utils.toArray(".split").forEach(text => {
-    //     gsap.from(text.querySelectorAll("span"), {  // span은 인라인 구조. 따로 인라인블록으로 구조 바꾸기
-    //         yPercent: 100,       // 그래서 y퍼센트가 적용이 안 됨
-    //         autoAlpha: 0,
-    //         duration: 0.5,
-    //         ease: "circ.out",
-    //         // stagger: 0.1,     // 노랜덤 부들거리며 나오기
-    //         stagger: {
-    //             amount: 1,
-    //             from: "random"   // 랜덤 효과
-    //         },
-    //         scrollTrigger: {
-    //             trigger: text,
-    //             start: "top bottom",
-    //             end: "+400",
-    //             markers: true
-    //         }
-    //     });
-    // });
-
-    // // intro, 이미지 나타기 효과
-    // gsap.set(".intro_title .title .title_t1, .intro_title .title .title_t2", { overflow: "hidden" });
-    // gsap.set(".intro_title .title .title_t1 p", { opacity: 0, y: 100, z: -1000 });
-    // gsap.set(".intro_title .title .title_t2 p", { opacity: 0, y: -100, z: -1000 });
-    // gsap.set(".images_wrap .flip-container", { opacity: 0, scale: 2.5 });
-    // gsap.set("#header", { y: -500 });
-
-    // let imageElements = document.querySelectorAll(".images_wrap .flip-container");
-    // let shuffledImages = Array.from(imageElements).sort(() => Math.random() - 0.5);
-
-    // setTimeout(() => {
-    //     let tl = gsap.timeline();
-
-    //     tl.to(".intro_title .title .title_t1 p, .intro_title .title .title_t2 p", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, "a");
-    //     tl.to(shuffledImages, { duration: 0.2, opacity: 1, scale: 1, stagger: 0.2 });
-    //     tl.to("#header", { duration: 1.2, y: 0 });
-    // }, 2000);
-
-
-
-
-    // // intro 이미지 뒤집으면 글자 나오게
-    // function flipCard(element) {
-    //     const flipper = element.querySelector('.flipper');
-    //     flipper.style.transform = flipper.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
-    // }
-
-    // $('.flip-container').click(function () {
-    //     // flipCard 함수 호출
-    //     flipCard(this);
-    // });
-
-
 
     // 텍스트 분할 애니메이션 함수(기본)
     function applyTextSplitAnimation(selector, staggerAmount, staggerFrom) {
@@ -247,6 +162,8 @@ $(document).ready(function () {
         });
     });
 
+
+
 });
 
 
@@ -322,6 +239,8 @@ window.addEventListener('scroll', function () {
             copies[i].style.opacity = Math.max(0, Math.min(1, (percentage - (i - 1) * 10) / 10));
         }
     }
+
+
 });
 
 
@@ -343,5 +262,7 @@ photoElements.forEach((photoElement) => {
     // 선택된 이미지를 배경으로 설정합니다.
     photoElement.style.backgroundImage = `url('${randomImage}')`;
 });
+
+
 
 
