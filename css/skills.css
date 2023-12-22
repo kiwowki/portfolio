@@ -7,9 +7,7 @@
     overflow: visible;
 }
 
-#skills {
-
-}
+#skills {}
 
 .skills_wrap {
     width: 100%;
@@ -17,6 +15,7 @@
     font-weight: 500;
     padding: 2.4vw 1.2vw;
     margin-top: -5vw;
+    /* overflow: hidden; 얘 때문에 skills의 sticky가 안 먹힘*/
 }
 
 .personality_wrap {}
@@ -72,7 +71,8 @@
 .skillSet_wrap {}
 
 .skillSet_top {
-    padding-top: 16vw;
+    padding-top: 20vw;
+    /* padding-top: 30vw; */
     padding-bottom: 2vw;
     font-size: 1vw;
     font-weight: 400;
@@ -81,15 +81,39 @@
 
 .skillSet_main {
     width: 100%;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.skillSet_main .top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.skillSet_main .middle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.skillSet_main .bot {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .skillSet_main .left {
     width: 25%;
-    flex-direction: column;
     display: flex;
-    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skillSet_main .left .h3,
+.skillSet_main .left .h4,
+.skillSet_main .left .h3_bold {
+    position: sticky;
+    top: 40%;
 }
 
 .skillSet_main .mid {
@@ -105,10 +129,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    position: static;
+
 }
 
-.h3 {
+.skillSet_main .right .h3,
+.skillSet_main .right .h4,
+.skillSet_main .right .h3_bold {
+    position: sticky;
+    top: 40%;
+}
+
+.skillSet_main .h3 {
     color: #000;
     letter-spacing: -.3vw;
     margin-top: 0;
@@ -119,7 +150,7 @@
     line-height: 4vw;
 }
 
-.h4 {
+.skillSet_main .h4 {
     color: #000;
     letter-spacing: -.2vw;
     margin-top: 0;
@@ -132,7 +163,15 @@
     text-decoration: none;
 }
 
-.h3.bold {
+.skillSet_main .h3_bold {
+    color: #000;
+    letter-spacing: -.3vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--sui);
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 4vw;
     font-weight: 500;
 }
 
@@ -140,6 +179,7 @@
     .personality_main>div>span {
         font-size: 2vw;
     }
+
     .skillSet_wrap {
         text-align: right;
     }
@@ -157,11 +197,13 @@
     .skillSet_main .left {
         display: none;
     }
+
     .skillSet_main .mid {
         align-items: flex-end;
     }
-    .skillSet_main .mid > div {
-        
+
+    .skillSet_main .mid>div {
+
         letter-spacing: -.4vw;
         font-size: 8vw;
         line-height: 6.5vw;

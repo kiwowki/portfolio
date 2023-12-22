@@ -1,13 +1,27 @@
-:root {
-    
-}
+:root {}
+
 body {
     -webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
     color: var(--black);
-    background-color: var(--black);
+    background-color: var(--white);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+/* 세로 스크롤 바 */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--yellow);
+    /* border-radius: 6px; */
+}
+body::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
 
 /* 여백 초기화 */
 body,
@@ -42,7 +56,9 @@ blockquote {
 }
 
 /* box-sizing 초기화 */
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -63,18 +79,26 @@ a {
 }
 
 /* 목록 초기화 */
-li, ol, ul {
+li,
+ol,
+ul {
     list-style: none;
 }
 
 /* 제목 초기화 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
     font-size: 1rem;
 }
 
 /* 폰트 스타일 */
-em, address {
+em,
+address {
     font-style: normal;
 }
 
@@ -85,7 +109,9 @@ img {
 }
 
 /* 보더 초기화 */
-img, fieldset, button {
+img,
+fieldset,
+button {
     border: 0;
 }
 
@@ -103,6 +129,7 @@ table {
     display: block;
     line-height: 0;
 }
+
 .clearfix::after {
     clear: both;
 }
@@ -110,7 +137,7 @@ table {
 /* 블라인드 효과 */
 .blind {
     position: absolute;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     width: 1px;
     height: 1px;
     margin: -1px;

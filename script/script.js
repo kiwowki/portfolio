@@ -239,9 +239,8 @@ window.addEventListener('scroll', function () {
             copies[i].style.opacity = Math.max(0, Math.min(1, (percentage - (i - 1) * 10) / 10));
         }
     }
-
-
 });
+
 
 
 
@@ -264,5 +263,54 @@ photoElements.forEach((photoElement) => {
 });
 
 
+// work gsap 핀 효과 넣기
+const works = gsap.utils.toArray(".work");
 
+works.forEach((work, i) => {
+    const img = work.querySelector(".img img");
+
+    const ani = gsap.timeline();
+    ani.to(img, {
+        scale: 1.5,
+    });
+
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
+
+    if (mediaQuery.matches) {
+        ScrollTrigger.create({
+            trigger: work,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+        });
+    } else {
+        ScrollTrigger.create({
+            animation: ani,
+            trigger: work,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+        });
+    }
+});
+
+
+
+
+//contact// GSAP ScrollTrigger 플러그인을 사용하여 스크롤 트리거를 초기화합니다.
+function adjustContactSize() {
+    gsap.to(".contact_wrap .mid .img_wrap", {
+        width: "53%", // 커지는 너비 설정
+        scrollTrigger: {
+            trigger: "#contact", // 트리거로 사용할 요소
+            start: "top bottom", // 트리거가 시작되는 지점
+            end: "bottom top", // 트리거가 종료되는 지점
+            scrub: true, // 스크롤에 따른 애니메이션 강도
+        },
+    });
+}
+
+window.addEventListener("load", adjustContactSize);
 

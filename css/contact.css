@@ -36,11 +36,12 @@
 }
 
 .contact_wrap .mid .img_wrap {
-    width: 50%;
+    width: 0%;
 }
 
 .contact_wrap .mid .img_wrap img {
     border-radius: 3vw;
+    width: 100%;
 }
 
 .contact_wrap .mid h2 {
@@ -98,7 +99,7 @@
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
-    
+
     font-family: var(--sui);
     text-transform: uppercase;
 
@@ -116,6 +117,7 @@
     line-height: 3vw;
     letter-spacing: -.1vw;
 }
+
 .contact_wrap .sns span a:hover {
     color: var(--yellow);
 }
@@ -123,9 +125,11 @@
 .contact_wrap .sns span:nth-child(1) {
     text-align: left;
 }
+
 .contact_wrap .sns span:nth-child(2) {
     text-align: center;
 }
+
 .contact_wrap .sns span:nth-child(3) {
     text-align: right;
 }
