@@ -20,12 +20,32 @@
 #loading-progress {
     width: 100px;
     /* 원하는 프로그레스 바 너비 설정 */
-    height: 10px;
+    height: 20px;
     background: white;
 }
 
+/* intro기본설정
+#intro,
+#intro2 {
+    position: relative;
+}
+
+.stars-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* intro2 글자효과 3D */
+
+
+
 
 /* intro */
+
+
 #intro {
     background-color: #000;
     color: #fff;
@@ -36,17 +56,10 @@
     z-index: -1;
 }
 
-#stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .intro_title {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100%; */
     height: 100vh;
     text-transform: uppercase;
     position: relative;
@@ -156,7 +169,6 @@
 
 @media(max-width: 479px) {
     .intro_title {
-        /* height: auto; */
         padding-top: 21vw;
     }
 
@@ -165,12 +177,10 @@
     }
 
     .title_t1 {
-        /* font-size: 20vw; */
         line-height: 1;
     }
 
     .title_t2 {
-        /* font-size: 20vw; */
         margin-bottom: 40vw;
         line-height: 0.65;
     }
@@ -259,75 +269,58 @@
 
 
 
-
-
-
 /* intro2 */
-
 #intro2 {
     background-color: #000;
-    /* color: #000; */
+    color: #fff;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: -1;
     display: none;
-}
-
-#intro2_canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#intro2 .intro_title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* width: 100%; */
-    height: 100vh;
-    text-transform: uppercase;
-    position: relative;
-    margin: 0 1vw;
-}
-
-#intro2 .intro_title .title {
-    width: 100%;
     text-align: center;
-    
+    min-height: 100vh;
+    background: black;
+    color: whitesmoke;
+    display: flex;
+    overflow: hidden;
 }
 
-#intro2 .title_t1 p {
-    font-size: 14vw;
+h1 {
+    width: 100%;
+    height: 100vh;
+    font-size: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: var(--gmark);
-    font-weight: 900;
-    line-height: 9.46vw;
-    letter-spacing: -.9vw;
-    display: inline-block;
-    padding-top: 2.6vw;
-    margin-bottom: 0.3vw;
+    font-weight: bold;
 }
 
-#intro2 .title_t2 p {
-    font-size: 14vw;
-    font-family: var(--gmark);
-    font-weight: 900;
-    line-height: 9.6vw;
-    letter-spacing: -.9vw;
-    display: inline-block;
-    padding-top: 2.6vw;
-    margin-top: 0.3vw;
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    pointer-events: none;
 }
 
-.title_t2 p {}
-
-@media(max-width: 1000px) {
+.td-wrapper,
+canvas {
+    transition: opacity 1s;
 }
+
+.td-wrapper:not(.td-hide)+canvas,
+.td-hide {
+    opacity: 0;
+}
+
+/* @media(max-width: 1000px) {}
 
 @media(max-width: 479px) {
     .intro_title {
-        /* height: auto; */
         padding-top: 21vw;
     }
 
@@ -336,26 +329,22 @@
     }
 
     .title_t1 {
-        /* font-size: 20vw; */
         line-height: 1;
     }
 
     .title_t2 {
-        /* font-size: 20vw; */
         margin-bottom: 40vw;
         line-height: 0.65;
     }
 }
 
 
-@media(max-width: 1020px) {
-}
+@media(max-width: 1020px) {}
 
-@media(max-width: 479px) {
-}
+@media(max-width: 479px) {}
 
 .images_wrap .flip-container {
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.5s ease, transform 0.5s ease;
-}
+} */

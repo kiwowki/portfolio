@@ -5,234 +5,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO</title>
-    <link rel="icon" href="img/icon/portfolio-svgrepo-com.svg" type="image/x-icon">
+    <style>
+        #intro2 {
+            background-color: #000;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            display: none;
+            text-align: center;
+            min-height: 100vh;
+            background: black;
+            color: whitesmoke;
+            display: flex;
+            overflow: hidden;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
+        #intro2 h1 {
+            width: 100%;
+            font-size: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #intro2 canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .td-wrapper,
+        #intro2 canvas {
+            transition: opacity 1s;
+        }
+
+        .td-wrapper:not(.td-hide)+#intro2 canvas,
+        .td-hide {
+            opacity: 0;
+        }
+    </style>
 
 </head>
 
 <body>
-    <!-- //header -->
-
-
-    <div id="section3">
-        <div class="intro-wrap">
-            <div class="intro i1">
-                <div class="p1">
-                    <div class="about_photos_img">
-                        <p class="t1  mbm-diff">first Challenge</p>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p2">
-                    <div class="about_photos_img">
-                        <p class="t2 mbm-diff">hidden Challenge</p>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="p3">
-                    <div class="about_photos_img">
-                        <p class="t3 mbm-diff">last Challenge</p>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                        <div class="photo_wrap">
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                            <div class="photo"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //section3 -->
-
-    <!-- <div id="section3">
-        <div class="about_photos_wrap">
-            <div class="about_photos p1">
-                <div class="about_photos_text mbm-diff">
-                    <p class="t1">first Challenge</p>
-                </div>
-                <div class="about_photos_img">
-                    <div class="photo_wrap">
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                        <div class="photo"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="about_photos p2">
-                <div class="about_photos_text mbm-diff">
-                    <p class="t2">first Passionate</p>
-                </div>
-                <div class="about_photos_img">
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo1"></div>
-                        <div class="photo" id="photo2"></div>
-                        <div class="photo" id="photo3"></div>
-                        <div class="photo" id="photo4"></div>
-                        <div class="photo" id="photo5"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo6"></div>
-                        <div class="photo" id="photo7"></div>
-                        <div class="photo" id="photo8"></div>
-                        <div class="photo" id="photo9"></div>
-                        <div class="photo" id="photo10"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo11"></div>
-                        <div class="photo" id="photo12"></div>
-                        <div class="photo" id="photo13"></div>
-                        <div class="photo" id="photo14"></div>
-                        <div class="photo" id="photo15"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="about_photos p3">
-                <div class="about_photos_text mbm-diff">
-                    <p class="t3">first Passionate</p>
-                </div>
-                <div class="about_photos_img">
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo1"></div>
-                        <div class="photo" id="photo2"></div>
-                        <div class="photo" id="photo3"></div>
-                        <div class="photo" id="photo4"></div>
-                        <div class="photo" id="photo5"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo6"></div>
-                        <div class="photo" id="photo7"></div>
-                        <div class="photo" id="photo8"></div>
-                        <div class="photo" id="photo9"></div>
-                        <div class="photo" id="photo10"></div>
-                    </div>
-                    <div class="photo_wrap">
-                        <div class="photo" id="photo11"></div>
-                        <div class="photo" id="photo12"></div>
-                        <div class="photo" id="photo13"></div>
-                        <div class="photo" id="photo14"></div>
-                        <div class="photo" id="photo15"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <section id="intro2">
+        <h1>
+            <span>PORTFOLIO</span>
+        </h1>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- <script src="https://unpkg.com/split-type"></script>-->
+    <script src="https://unpkg.com/split-type"></script>
     <script src="script/script.js"></script>
     <script>
-        // 메인
-        // const ani7 = gsap.timeline();
-        // ani7.from("#section3 .t1", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")   //duration 나오는 속도
-        //     .from("#section3 .t2", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")   //"+=1" -> 다 나오고 나오게
-        //     .from("#section3 .t3", { autoAlpha: 0, duration: 1, y: 50 }, "+=1")
-        //     .from("#section3 .t1 .about_photos_img", { autoAlpha: 0, duration: 1, y: 50 }, "-=1")
-        //     .from("#section3 .t2 .about_photos_img", { autoAlpha: 0, duration: 1, y: 50 }, "-=1")
-        //     .from("#section3 .t3 .about_photos_img", { autoAlpha: 0, duration: 1, y: 50 }, "-=1")
+        class TextDesintegrator {
+            constructor(el, options) {
+                const defaultOptions = {
+                    padding: 160,
+                    density: 4,
+                    duration: 6000
+                };
+                this.step = 0;
+                this.count = 0;
+                this.data = [];
+                this.scale = 2;
+                this.el = el;
+                this.el.style.position = "relative";
+                this.el.innerHTML = `<span class="td-wrapper">${this.el.textContent}</span>`;
+                this.inner = this.el.querySelector("span");
+                this.options = {
+                    ...defaultOptions,
+                    ...options
+                };
+                this.reverse = false;
 
-        // ScrollTrigger.create({
-        //     animation: ani7,
-        //     trigger: "#section3",
-        //     start: "top top",
-        //     end: "+=6000",
-        //     scrub: true,
-        //     pin: true,
-        // });
+                document.fonts.ready.then(() => {
+                    this.createCanvas();
+                    this.fillCanvas();
+                    this.pixelize();
+                    setTimeout(() => {
+                        this.start();
+                    }, 0);
+                });
+            }
+            createCanvas() {
+                const { width, height } = this.el.getBoundingClientRect();
+                this.height = height;
+                this.width = width;
+                this.canvas = document.createElement("canvas");
+                this.canvas.width = this.scale * (this.width + 2 * this.options.padding);
+                this.canvas.height = this.scale * (this.height + 2 * this.options.padding);
+                this.canvas.style.width = `${this.width + 2 * this.options.padding}px`;
+                this.canvas.style.height = `${this.height + 2 * this.options.padding}px`;
+                this.canvas.style.transform = `translate3d(${-this.options.padding}px, ${-this.options.padding}px, 0)`;
+                this.context = this.canvas.getContext("2d");
+                this.context.scale(this.scale, this.scale);
+                this.el.append(this.canvas);
+            }
+            clearContext() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+            fillCanvas() {
+                const style = getComputedStyle(this.el);
+                this.color = style.getPropertyValue("color");
+                this.context.fillStyle = this.color;
+                this.context.font = style.getPropertyValue("font");
+                this.context.textBaseline = "ideographic";
+                this.context.fillText(
+                    this.el.textContent,
+                    this.options.padding,
+                    (this.canvas.height / this.scale + this.height) / 2
+                );
+            }
+            start() {
+                this.t0 = 0;
+                this.id = window.requestAnimationFrame((t) => this.render(t));
+            }
+            stop() {
+                if (this.id) {
+                    window.cancelAnimationFrame(this.id);
+                }
+            }
+            pixelize() {
+                const { padding, density, duration } = this.options;
+                for (
+                    let y = 0; y < this.canvas.height + 2 * padding - Math.floor(density / 2); y += density
+                ) {
+                    for (
+                        let x = 0; x < this.canvas.width + 2 * padding - Math.floor(density / 2); x += density
+                    ) {
+                        const {
+                            data
+                        } = this.context.getImageData(
+                            x + Math.floor(density / 4),
+                            y + Math.floor(density / 4),
+                            1,
+                            1
+                        );
+                        const [, , , a] = data;
+                        if (a > 0) {
+                            this.data.push({
+                                alpha: a / 255,
+                                longevity: Math.min(
+                                    duration * 0.25 + Math.random() * duration * 0.75,
+                                    duration - 1
+                                ),
+                                x,
+                                y,
+                                initialX: x,
+                                initialY: y,
+                                finalX: x + 2 * (Math.random() - 0.5) * this.canvas.width,
+                                finalY: y + 2 * (Math.random() - 0.5) * this.canvas.width
+                            });
+                        }
+                    }
+                }
+            }
 
-        // test
-        const ani7 = gsap.timeline();
-        ani7.fromTo("#section3 .t1", { autoAlpha: 1, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 1 })
-            .from("#section3 .p1 .about_photos_img", { autoAlpha: 1, duration: 1 }, "-=1")
-            .fromTo("#section3 .t2", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 1 }, "+=1")
-            .from("#section3 .p2 .about_photos_img", { autoAlpha: 0, duration: 1 }, "-=1")
-            .fromTo("#section3 .t3", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 1 }, "+=1")
-            .from("#section3 .p3 .about_photos_img", { autoAlpha: 0, duration: 1 }, "-=1");
+            render(timestamp) {
+                if (!this.t0) {
+                    this.t0 = timestamp;
+                }
+                const elapsed = timestamp - this.t0;
+                if (this.step < Math.min(500, this.options.duration * 0.5)) {
+                    if (this.reverse) {
+                        this.inner.classList.remove("td-hide");
+                    } else {
+                        this.inner.classList.add("td-hide");
+                    }
+                }
+                this.updateData();
+                this.clearContext();
+                for (const sq of this.data) {
+                    this.context.globalAlpha = sq.alpha;
+                    this.context.fillStyle = this.color;
+                    this.context.fillRect(
+                        sq.x / 2,
+                        sq.y / 2,
+                        this.options.density / 2,
+                        this.options.density / 2
+                    );
+                }
+                this.step = this.reverse ? this.options.duration - elapsed : elapsed;
+                if (elapsed > this.options.duration) {
+                    this.onComplete();
+                }
+                this.id = requestAnimationFrame((t) => this.render(t));
+            }
+            onComplete() {
+                this.reverse = !this.reverse;
+                this.t0 = 0;
+            }
+            updateData() {
+                for (const sq of this.data) {
+                    sq.alpha = this.calculateOpacity(sq.longevity, this.step);
+                    sq.x = this.calculatePosition(
+                        sq.initialX,
+                        sq.finalX,
+                        sq.longevity,
+                        this.step
+                    );
+                    sq.y = this.calculatePosition(
+                        sq.initialY,
+                        sq.finalY,
+                        sq.longevity,
+                        this.step
+                    );
+                }
+            }
+            calculatePosition(xS, xE, l, x) {
+                const expo = (l, x) => {
+                    return x < l ? 1 - Math.pow(2, 10 * (x / l) - 10) : 0;
+                };
+                const val = (xS - xE) * expo(l, x) + xE;
+                return val;
+            }
+            calculateOpacity(l, x) {
+                return x <= l ? 1 - Math.pow(x / l, 1) : 0;
+            }
+        }
 
-        ScrollTrigger.create({
-            animation: ani7,
-            trigger: "#section3",
-            start: "top top",
-            end: "+=5000",
-            scrub: true,
-            pin: true,
-        });
+        const h1 = document.querySelectorAll("h1 span");
 
+        h1.forEach((el) => new TextDesintegrator(el));
     </script>
 
 
