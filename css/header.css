@@ -13,11 +13,10 @@
     text-transform: uppercase;
     color: var(--white);
     font-weight: 800;
-    z-index: 1000;
+    z-index: 10;
     mix-blend-mode: difference;
     font-family: var(--pre);
     font-size: 0.7vw;
-    
 }
 
 #header .left {
