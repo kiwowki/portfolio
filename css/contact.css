@@ -31,12 +31,23 @@
 .contact_wrap .mid {
     display: flex;
     width: 100%;
+    height: 100%;
     justify-content: space-between;
     align-items: flex-start;
 }
+.contact_wrap .mid .one {
+    height: 100%;
+    /* background-color: #ff0000; */
+}
+.contact_wrap .mid .one .two {
+    width: 100%;
+    height: 50%;
+    /* background-color: #fff; */
+}
 
-.contact_wrap .mid .img_wrap {
+ .contact_wrap .mid .img_wrap {
     width: 0%;
+    height: 100%;
 }
 
 .contact_wrap .mid .img_wrap img {
@@ -50,6 +61,11 @@
     font-weight: 500;
     letter-spacing: -.9vw;
     line-height: 9.1vw;
+}
+.contact_wrap .mid > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact_wrap .bot {

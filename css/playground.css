@@ -1,7 +1,7 @@
 #playground {
-    height: 250vw;
+    height: 300vw;
     min-height: 250vw;
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
     border-radius: 0;
     align-items: flex-start;
     display: flex;
@@ -20,7 +20,7 @@
 
 .playground_title {
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
     justify-content: center;
     align-items: center;
     display: flex;
@@ -55,8 +55,11 @@
 }
 
 .playground_photos {
+    padding-top: 10vw;
+    margin-top: 10vw;
+    background-color: #333;
     width: 100%;
-    height: 250vw;
+    height: 290vw;
     min-height: 250vw;
     border-radius: 4vw;
     display: block;
@@ -65,6 +68,7 @@
 }
 
 .photos_wrap {
+    
     padding-left: 1.2vw;
     padding-right: 1.2vw;
     display: flex;
@@ -72,46 +76,47 @@
     flex-direction: column;
 }
 
-.photos_wrap .left img {
+.photos_wrap img {
     z-index: 9;
     /* width: 40vw; */
-    border-radius: 3vw;
+    /* border-radius: 3vw; */
     position: relative;
-    top: 20vw;
+    /* top: 20vw; */
+    margin-bottom: 5vw;
 }
 
 .photos_wrap .img1 {
-    border-radius: 3vw;
+   
     width: 70vw;
 }
 
 .photos_wrap .img2 {
-    border-radius: 3vw;
+   
     width: 50vw;
 }
 
 .photos_wrap .img3 {
-    border-radius: 3vw;
-    width: 30vw;
+   
+    width: 40vw;
 }
 
 .photos_wrap .img4 {
-    border-radius: 3vw;
+   
     width: 60vw;
 }
 
 .photos_wrap .img5 {
-    border-radius: 3vw;
-    width: 70vw;
+   
+    width: 50vw;
 }
 
 .photos_wrap .img6 {
-    border-radius: 3vw;
+   
     width: 40vw;
 }
 
 .photos_wrap .img7 {
-    border-radius: 3vw;
+   
     width: 30vw;
 }
 
